@@ -1,10 +1,19 @@
-# Advanced Robotics (INFR112132022) software labs
+# Advanced Robotics | Task Planning for a Humanoid Robot: Moving Cube to Target
 
-These instructions are written for ARO labs regarding set up on DICE environment.
+The task of instructing a humanoid robot to grasp a cube and maneuver it
+over to a specified target while avoiding any obstacles is a complex and nuanced
+problem. We saw the most success by breaking the overall goal down into sub-tasks. For a given cube location, inverse geometry was used to obtain collision-free
+grasping robot configurations. Subsequently, we utilized RRT for efficient path
+planning. The path was then parametrised using Bézier curves and evaluated on a
+dynamics simulator, where the torques necessary to adhere to reference trajectories
+were computed with the aid of a PD controller. Our approach exhibits robust
+performance when accomplishing the cube relocation task even amidst noise in the
+initial location or rotation and target location. The robot successfully transported
+the cube to the target location within a margin of 1.6(9) cm. The main limitation
+is that our approach assumes a static environment and that our grasping approach
+is tailored to lifting a cube.
 
-The lab instructions are given in the instructions notebook. 
-This readme provides you with the instructions for installing the lab requirements.
-These instructions are very similar to the [tutorials instructions](https://github.com/ediaro23/tutorials).
+An example video of the algorithm's performance in path planning can be seen [here](https://drive.google.com/file/d/1qk8JJkKQkS_DSZiMZngV8bLR0WdzG525/view?usp=sharing). An example video of the algorithm's performance when evaluated on the dynamics simulator Pybullet can be found [here](https://drive.google.com/file/d/1YxhZTJPIhTFwkMqaAYpgQF8395_4-lGa/view?usp=sharing).
 
 ## Set up 
 
